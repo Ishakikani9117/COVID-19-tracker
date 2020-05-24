@@ -51,21 +51,5 @@ export const countryList = async () => {
   }
 };
 
-export const fetchCountryData = async (country) => {
-  
-    try{
-       const {data:{confirmed, recovered, deaths, lastUpdate }} = await Axios.get(`${url}/countries/${country}`);
-       const modifiedData = {
-           confirmed,
-           recovered,
-           deaths,
-           lastUpdate
-       }
-        return modifiedData;
-    }
-    catch(error){
-        console.log(error);
-    }
-}
 
 
